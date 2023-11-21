@@ -57,7 +57,9 @@ function Header() {
   <div className='dash1'>
   <Navbar className="nav" expand="md">
       <Container className='flex'>
-        <Navbar.Brand className="text-white">Dashboard</Navbar.Brand>
+      {userData && (
+        <Navbar.Brand className="text-white"><span className='text-center'>{userData.firstName}</span>&nbsp;&nbsp;&nbsp;Dashboard </Navbar.Brand>
+      )}
         <Navbar.Toggle aria-controls="navbarCollapse" />
         <Navbar.Collapse id="navbarCollapse">
           <Nav className="ms-auto">
@@ -66,7 +68,7 @@ function Header() {
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={()=>navigate('/deleteaccount')}>Delete Profile</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item onClick={()=>aboutus()}>About App</NavDropdown.Item>
+              <NavDropdown.Item onClick={()=>navigate('/aboutapp')}>About App</NavDropdown.Item>
             </NavDropdown>
             <Button className="nav-btn" onClick={() => add()}>Add Details</Button>
             <Button className="nav-btn" onClick={() => logout()}>Logout</Button>
@@ -74,7 +76,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    <div className="container">
+    <div className="container c1">
       {userData && (
         <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
           <thead>
@@ -149,7 +151,7 @@ function Header() {
       )}
     </div>
 
-    <div className="container">
+    <div className="container c1">
       {userData && (
         <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)',backdropFilter: 'blur(10px)'}}>
           <thead>
@@ -179,7 +181,6 @@ function Header() {
     <div className="form-box1">
   <div className="container">
 
-    {/* <!-- login In Form --> */}
   <Form className= "input-group d-flex flex-column" >
     <div className= "d-flex flex-column no-wrap text-center pt-3">
   <div>

@@ -1,35 +1,35 @@
-import React, { useState,useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import AxiosService from '../common/ApiService'
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import AxiosService from "../common/ApiService";
 
 const Userdetail = () => {
   let navigate = useNavigate();
-  let id = sessionStorage.getItem('id');
+  let id = sessionStorage.getItem("id");
   console.log(id);
   const colorOptions = [
-    'Red',
-    'Blue',
-    'Green',
-    'Yellow',
-    'Orange',
-    'Purple',
-    'Pink',
-    'Brown',
-    'Black',
-    'White',
-    'Gray',
-    'Cyan',
-    'Magenta',
-    'Lime',
-    'Teal',
-    'Indigo',
-    'Violet',
-    'Maroon',
-    'Olive',
-    'Navy',
-    'Aquamarine',
-    'Turquoise',
-    'Silver',
+    "Red",
+    "Blue",
+    "Green",
+    "Yellow",
+    "Orange",
+    "Purple",
+    "Pink",
+    "Brown",
+    "Black",
+    "White",
+    "Gray",
+    "Cyan",
+    "Magenta",
+    "Lime",
+    "Teal",
+    "Indigo",
+    "Violet",
+    "Maroon",
+    "Olive",
+    "Navy",
+    "Aquamarine",
+    "Turquoise",
+    "Silver",
   ];
 
   const [selectedDressColors, setSelectedDressColors] = useState([]);
@@ -46,7 +46,6 @@ const Userdetail = () => {
 
   const fetchData = async () => {
     try {
-
       const res = await AxiosService.get(`/login/${id}`);
 
       setSelectedDressColors(res.data.user.dresscolor);
@@ -55,14 +54,12 @@ const Userdetail = () => {
       setSelectedBagColors(res.data.user.bagcolor);
     } catch (error) {
       console.error(error);
-      
     }
   };
 
   useEffect(() => {
-    
     fetchData();
-  }, []); 
+  }, []);
 
   const handleCheckboxChange = (color, setSelectedColors) => {
     setSelectedColors((prevColors) => {
@@ -80,13 +77,11 @@ const Userdetail = () => {
   const handleInputChange = (e, setSelectedColors, setShowColorOptions) => {
     const { name, value, checked, type } = e.target;
 
-    if (type === 'checkbox') {
+    if (type === "checkbox") {
       handleCheckboxChange(value, setSelectedColors);
     } else {
-      
       setSelectedColors([value]);
     }
-
   };
 
   const createColorInputSection = (
@@ -106,7 +101,7 @@ const Userdetail = () => {
           className="form-control"
           id={`${label.toLowerCase()}Color`}
           name={label.toLowerCase()}
-          value={(selectedColors || []).join(', ')}
+          value={(selectedColors || []).join(", ")}
           readOnly
         />
         <button
@@ -120,9 +115,12 @@ const Userdetail = () => {
       {showColorOptions && (
         <div
           className="color-options-wrapper position-absolute top-100 start-0"
-          style={{ transform: 'translate(280px, -40px)' }}
+          style={{ transform: "translate(280px, -40px)" }}
         >
-          <div className="color-options" style={{ maxHeight: '50vh', overflowY: 'scroll', width: '100%' }}>
+          <div
+            className="color-options"
+            style={{ maxHeight: "50vh", overflowY: "scroll", width: "100%" }}
+          >
             {colorOptions.map((color) => (
               <div key={color} className="form-check">
                 <input
@@ -132,9 +130,14 @@ const Userdetail = () => {
                   name={label.toLowerCase()}
                   value={color}
                   checked={selectedColors?.includes(color)}
-                  onChange={(e) => handleInputChange(e, setSelectedColors, setShowColorOptions)}
+                  onChange={(e) =>
+                    handleInputChange(e, setSelectedColors, setShowColorOptions)
+                  }
                 />
-                <label className="form-check-label" htmlFor={`${label.toLowerCase()}-${color}`}>
+                <label
+                  className="form-check-label"
+                  htmlFor={`${label.toLowerCase()}-${color}`}
+                >
                   {color}
                 </label>
               </div>
@@ -148,7 +151,7 @@ const Userdetail = () => {
   let validateuserdetails = async (event) => {
     try {
       event.preventDefault();
-      
+
       const dresscolor = selectedDressColors;
       const shoecolor = selectedShoeColors;
       const watchcolor = selectedWatchColors;
@@ -162,12 +165,11 @@ const Userdetail = () => {
       });
 
       if (res.status === 200) {
-        // toast.success("User updated Successfully")
-        navigate('/dashboard');
+        toast.success("User updated Successfully")
+        navigate("/dashboard");
       }
     } catch (error) {
-      console.error(error);
-      // toast.error(error.response.data.message || "Error Occurred! Please try after some time")
+      toast.error(error.response.data.message || "Error Occurred! Please try after some time")
     }
   };
 
@@ -177,7 +179,7 @@ const Userdetail = () => {
       <form className="row g-3">
         <div className="col-12 col-md-6">
           {createColorInputSection(
-            'Dress',
+            "Dress",
             selectedDressColors,
             setSelectedDressColors,
             showDressColorOptions,
@@ -186,7 +188,7 @@ const Userdetail = () => {
         </div>
         <div className="col-12 col-md-6">
           {createColorInputSection(
-            'Shoe',
+            "Shoe",
             selectedShoeColors,
             setSelectedShoeColors,
             showShoeColorOptions,
@@ -195,7 +197,7 @@ const Userdetail = () => {
         </div>
         <div className="col-12 col-md-6">
           {createColorInputSection(
-            'Watch',
+            "Watch",
             selectedWatchColors,
             setSelectedWatchColors,
             showWatchColorOptions,
@@ -204,7 +206,7 @@ const Userdetail = () => {
         </div>
         <div className="col-12 col-md-6">
           {createColorInputSection(
-            'Bag',
+            "Bag",
             selectedBagColors,
             setSelectedBagColors,
             showBagColorOptions,
@@ -212,7 +214,10 @@ const Userdetail = () => {
           )}
         </div>
         <div className="col-md-12">
-          <button className="btn-primary btn1" onClick={(event) => validateuserdetails(event)}>
+          <button
+            className="btn-primary btn1"
+            onClick={(event) => validateuserdetails(event)}
+          >
             Save
           </button>
         </div>
