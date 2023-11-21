@@ -4,7 +4,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from 'react-router-dom';
-// import useLogout from '../common/useLogout';
+import bg from "../assets/185873493_l_normal_none.jpg"
+import bg1 from"../assets/211832915_l_normal_none.jpg"
+import bg2 from "../assets/215972692_l_normal_none.jpg"
+import bg3 from "../assets/Female-Wardrobe3.jpg.webp"
+import bg4 from "../assets/198751349_l_normal_none.jpg"
+import bg5 from "../assets/211221273_l_normal_none.jpg"
 import Carousel from 'react-bootstrap/Carousel';
 function Home() {
     let navigate = useNavigate()
@@ -33,36 +38,66 @@ function Home() {
       <Carousel data-bs-theme="dark">
       <Carousel.Item>
         <img className='img'
-          src="185873493_l_normal_none.jpg"
+          src={bg2}
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5></h5>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className='img'
-          src="211221273_l_normal_none.jpg"
+          src={bg1}
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h5></h5>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className='img'
-          src="211832915_l_normal_none.jpg"
+          src={bg3}
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h5>Third slide label</h5>
+          <h5></h5>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+
           </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className='img'
+          src={bg4}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h5></h5>
+          <p></p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className='img'
+          src={bg5}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h5></h5>
+          <p></p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className='img'
+          src={bg}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h5></h5>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
