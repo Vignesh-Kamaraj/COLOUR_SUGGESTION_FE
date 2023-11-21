@@ -67,7 +67,8 @@ function Login() {
             let res = await AxiosService.post('/forgetPassword',{
                 email
             });
-            if(res.data.status==200)
+            console.log(res)
+            if(res.status==200)
             {
            navigate('/resetPassword')
            }
