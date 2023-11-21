@@ -30,10 +30,7 @@ function Edituser() {
     <div className="home">
       <div className="form-box">
         <div className="align">
-          <span>Delete Your Account</span>
-        </div>
-        <div>
-          <span>Enter ur password to delete ur Account</span>
+          <span>Change ur Password</span>
         </div>
         <div className="d-flex flex-row">
           <Form className="input-group" id="reset">

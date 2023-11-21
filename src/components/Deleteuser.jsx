@@ -30,8 +30,8 @@ function Deleteuser() {
         <div className="align">
           <span>Delete Your Account</span>
         </div>
-        <div>
-          <span>Enter ur password to delete ur Account</span>
+        <div >
+          <span className="del">Enter ur password to delete ur Account</span>
         </div>
         <div className="d-flex flex-row">
           <Form className="input-group" id="reset">
