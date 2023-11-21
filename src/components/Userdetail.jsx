@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AxiosService from "../common/ApiService";
+import { toast } from "react-toastify";
 
 const Userdetail = () => {
   let navigate = useNavigate();
   let id = sessionStorage.getItem("id");
-  console.log(id);
   const colorOptions = [
     "Red",
     "Blue",

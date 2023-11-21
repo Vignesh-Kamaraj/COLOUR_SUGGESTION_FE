@@ -25,16 +25,19 @@ function Home() {
   return (
     <>
       <div className="dash">
-        <Navbar className="nav">
+        <Navbar className="nav" expand="md">
           <Container className="d-flex justify-content-between align-items-center">
             <Navbar.Brand className="text-white mx-auto brand-text">
               Blend With Nature
             </Navbar.Brand>
-            <Nav>
+            <Navbar.Toggle aria-controls="navbarCollapse" />
+            <Navbar.Collapse id="navbarCollapse">
+            <Nav className="ms-auto">
               <Button className="nav-btn" onClick={() => User()}>
                 Signup/Login
               </Button>
             </Nav>
+            </Navbar.Collapse>
           </Container>
         </Navbar>
         <div className="car">

@@ -18,7 +18,7 @@ body {
 
 .dash1 {
     width: 100% !important;
-    height: 100% !important;
+    height: 100vh !important;
     position: relative !important;
     background: url("./assets/210827889_l_normal_none.jpg");
     background-size: cover !important;
