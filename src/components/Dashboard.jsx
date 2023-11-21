@@ -76,57 +76,72 @@ function Header() {
     </Navbar>
     <div className="container">
       {userData && (
-        <table className="table  " style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)',backdropFilter: 'blur(10px)'}}>
+        <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
           <thead>
             <tr className='tbn'>
               <th scope="col">My Collections</th>
               <th scope="col">Colors</th>
             </tr>
           </thead>
-          <tbody >
-            <tr className='tbn' >
+          <tbody>
+            <tr className='tbn'>
               <th scope="row">Dress</th>
-              <td >
-                {userData.dresscolor.map((color, index) => (
-                  <span key={index}>
-                    {color}
-                    {index !== userData.dresscolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
-                  </span>
-                ))}
+              <td>
+                {userData.dresscolor.length === 0 ? (
+                  "Add dress color by clicking Add details"
+                ) : (
+                  userData.dresscolor.map((color, index) => (
+                    <span key={index}>
+                      {color}
+                      {index !== userData.dresscolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
+                    </span>
+                  ))
+                )}
               </td>
             </tr>
             <tr className='tbn'>
               <th scope="row">Watch</th>
-              
               <td>
-                {userData.watchcolor.map((color, index) => (
-                  <span key={index}>
-                    {color}
-                    {index !== userData.watchcolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
-                  </span>
-                ))}
+                {userData.watchcolor.length === 0 ? (
+                  "Add watch color by clicking Add details"
+                ) : (
+                  userData.watchcolor.map((color, index) => (
+                    <span key={index}>
+                      {color}
+                      {index !== userData.watchcolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
+                    </span>
+                  ))
+                )}
               </td>
             </tr>
             <tr className='tbn'>
               <th scope="row">Shoe</th>
               <td>
-                {userData.shoecolor.map((color, index) => (
-                  <span key={index}>
-                    {color}
-                    {index !== userData.shoecolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
-                  </span>
-                ))}
+                {userData.shoecolor.length === 0 ? (
+                 "Add shoe color by clicking Add details"
+                ) : (
+                  userData.shoecolor.map((color, index) => (
+                    <span key={index}>
+                      {color}
+                      {index !== userData.shoecolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
+                    </span>
+                  ))
+                )}
               </td>
             </tr>
             <tr className='tbn'>
               <th scope="row">Bag</th>
               <td>
-                {userData.bagcolor.map((color, index) => (
-                  <span key={index}>
-                    {color}
-                    {index !== userData.bagcolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
-                  </span>
-                ))}
+                {userData.bagcolor.length === 0 ? (
+                 "Add bag color by clicking Add details"
+                ) : (
+                  userData.bagcolor.map((color, index) => (
+                    <span key={index}>
+                      {color}
+                      {index !== userData.bagcolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
+                    </span>
+                  ))
+                )}
               </td>
             </tr>
           </tbody>

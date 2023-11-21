@@ -1,6 +1,7 @@
 
 body{
-    font-family: fontawesome;
+    font-family: "Sofia", sans-serif !important;
+    text-shadow: 3px 3px 3px #ababab !important;
 }
 
 .dash{
@@ -269,4 +270,10 @@ table tr td, table tr th{
 }
 .txt{
     color: #ffffff !important;
+}
+
+.brand-text{
+    font-family: "Sofia", sans-serif !important;
+    font-size: 35px !important;
+    text-shadow: 3px 3px 3px #ababab !important;
 }
