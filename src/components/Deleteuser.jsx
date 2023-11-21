@@ -10,8 +10,6 @@ function Deleteuser() {
   let validateDelete = async (e) => {
     e.preventDefault();
     try {
-      console.log(id);
-      console.log(password);
       let res = await AxiosService.put(`/delete/${id}`, {
         password,
       });

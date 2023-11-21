@@ -51,7 +51,7 @@ function Login() {
         password,
       });
       if (res.status === 201) {
-        toast.success("User Created Successfully");
+        toast.success("User Created Successfully, Click on Login");
         navigate("/");
       }
     } catch (error) {
@@ -179,7 +179,7 @@ function Login() {
 
             {/* <!-- Sign In Form --> */}
             <Form className=" input-group" id="register">
-              <span className="text">Welcome Back</span>
+              <span className="text">Register Now</span>
               <FontAwesomeIcon
                 icon={faUser}
                 style={{

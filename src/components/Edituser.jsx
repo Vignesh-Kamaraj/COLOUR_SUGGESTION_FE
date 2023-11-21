@@ -11,8 +11,6 @@ function Edituser() {
   let validateuser = async (e) => {
     e.preventDefault();
     try {
-      console.log(id);
-      console.log(password);
       let res = await AxiosService.put(`/${id}`, {
         password,
         newpassword,
